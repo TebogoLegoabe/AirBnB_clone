@@ -4,6 +4,7 @@ from models.base_model import BaseModel
 
 """class creation"""
 
+
 class Review(BaseModel):
     """class attributes"""
     place_id = ""
