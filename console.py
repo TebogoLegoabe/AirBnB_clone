@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""importing modules"""
 import cmd
 import sys
 import json
@@ -12,6 +11,7 @@ from models.review import Review
 from models.place import Place
 from models import storage
 
+"""importing modules"""
 classesList = [
         "BaseModel",
         "User",
@@ -26,6 +26,7 @@ classesList = [
 
 
 class HBNBCommand(cmd.Cmd):
+
     prompt = '(hbnb) '
 
     def emptyline(self):
