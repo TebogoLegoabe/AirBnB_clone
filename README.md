@@ -1,4 +1,4 @@
-<h2>Welcome to the AirBnB clone project :)</h2>
+<h2>Welcome AirBnB clone project :)</h2>
 <br>
 <h2>First Step: Writing a command  interpreter to manage all my AirBnB objects</h2>
 <br>
