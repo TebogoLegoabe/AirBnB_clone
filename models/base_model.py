@@ -25,11 +25,17 @@ class BaseModel:
             if 'my_number' in kwargs:
                 self.my_number = kwargs['my_Number']
             if 'created_at' in kwargs:
-                self.created_at = datetime.strptime(kwargs['created_at'], "%Y-%m-%dT%H:%M:%S.%f")
+                self.created_at = (
+                        datetime
+                        .strptime(kwargs['created_at'], "%Y-%m-%dT%H:%M:%S.%f")
+                        )
             else:
                 self.created_at = datetime.now()
             if 'updated_at' in kwargs:
-                self.updated_at = datetime.strptime(kwargs['updated_at'], "%Y-%m-%dT%H:%M:%S.%f")
+                self.updated_at = (
+                        datetime.
+                        strptime(kwargs['updated_at'], "%Y-%m-%dT%H:%M:%S.%f")
+                        )
             else:
                 self.updated_at = dateime.now()
         else:
@@ -40,7 +46,10 @@ class BaseModel:
 
     def __str__(self):
         """return str representation of instance"""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return (
+                "[{}] ({}) {}"
+                .format(self.__class__.__name__, self.id, self.__dict__)
+                )
 
     def save(self):
         """
