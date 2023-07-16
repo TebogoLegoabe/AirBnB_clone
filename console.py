@@ -12,7 +12,15 @@ from models.review import Review
 from models.place import Place
 from models import storage
 
-classesList = ["BaseModel", "User", "Place", "Review", "City", "State", "Amenity"]
+classesList = [
+        "BaseModel",
+        "User",
+        "Place",
+        "Review",
+        "City",
+        "State",
+        "Amenity"
+        ]
 
 """creating our class"""
 
@@ -154,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
                     else:
                         try:
                             setattr(obj, args[2], eval(args[3].strip('"')))
-                        except:
+                        except Exception:
                             setattr(obj, args[2], args[3].strip('"'))
                         storage.save()
             else:
@@ -209,10 +217,18 @@ class HBNBCommand(cmd.Cmd):
                 elif"update" in method:
                     """when dict isn't passed"""
                     if "{" not in method.split("(")[1]:
-                        update_id = method.split("(")[1].split(", ")[0].strip(')"')
+                        update_id = (
+                                method.split("(")[1]
+                                .split(", ")[0]
+                                .strip(')"')
+                                )
                         attr = method.split("(")[1].split(", ")[1].strip(')"')
                         value = method.split("(")[1].split(", ")[2].strip(')"')
-                        update_str = className + " "  + update_id + " " + attr + " " + value
+                        update_str = (
+                                className + " " +
+                                update_id + " " +
+                                attr + " " + value
+                                )
                         self.do_update(update_str)
 
 
