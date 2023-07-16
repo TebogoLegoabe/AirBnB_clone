@@ -55,7 +55,43 @@ class TestConsole(unittest.TestCase):
             HBNBCommand().onecmd('all User')
             self.assertEqual(f.getvalue(), str(user1) + '\n' + str(user2))
 
-    def tearDown(self):
-        storage.delete_all()
+    def test_press_enter(self):
+    """When press enter no action has to been executed"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("\n")
+    self.assertEqual(f.getvalue(), '')
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("            \n")
+    self.assertEqual(f.getvalue(), '')
+
+def test_wrong_command(self):
+    """When press random words no action has to been executed"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("daasdas")
+    self.assertEqual(f.getvalue(), '*** Unknown syntax: daasdas\n')
+
+def test_help_with_args(self):
+    """Test if all docstring were written"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("help quit")
+    self.assertEqual(f.getvalue(), 'Quit command to exit the program\n\n')
+
+def test_command_with_spaces(self):
+    """Despite spaces the command has to be executed"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("     help        quit")
+    self.assertEqual(f.getvalue(), 'Quit command to exit the program\n\n')
+
+def test_quit(self):
+    """Test quit"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("quit")
+    self.assertEqual(f.getvalue(), '')
+
+def test_EOF(self):
+    """Test EOF"""
+    with patch('sys.stdout', new=StringIO()) as f:
+        HBNBCommand().onecmd("EOF")
+    self.assertEqual(f.getvalue(), '\n')
 if __name__ == "__main__":
     unittest.main()
