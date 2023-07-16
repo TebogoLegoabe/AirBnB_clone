@@ -38,8 +38,10 @@ class FileStorage:
         method that serializes __objects to the JSON file (path: __file_path)
         """
         with open(FileStorage.__file_path, 'w', encoding="utf-8") as myFile:
-            objects_json = {k: v.to_dict() for
-                    k, v in FileStorage.__objects.items()}
+            objects_json = (
+                    {k: v.to_dict() for k, v in
+                        FileStorage.__objects.items()}
+                    )
             json.dump(objects_json, myFile)
 
     def reload(self):
