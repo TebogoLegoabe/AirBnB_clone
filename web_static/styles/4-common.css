@@ -1,43 +1,12 @@
-<<<<<<< HEAD
 body{
     margin: 0;
     padding: 0;
-=======
-html, body {
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-}
-
-html {
-  position: relative;
-}
-
-body {
->>>>>>> f532a22a4f8be652b62abde014484cf64cb92898
     color: #484848;
     font-size: 14px;
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-<<<<<<< HEAD
+
 body .container{
     max-width: 1000px;
     margin: 30px auto;
 }
-=======
-
-.container {
-    max-width: 1000px;
-    margin: 30px auto;
-}
-
-h4 {
-    font-weight: 400;
-    font-size: 14px;
-}
-
-ul {
-  list-style: none;
-  padding: 10px;
-}
->>>>>>> f532a22a4f8be652b62abde014484cf64cb92898
