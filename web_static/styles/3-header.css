@@ -1,4 +1,5 @@
 header {
+<<<<<<< HEAD
     color: white;
     height: 70px;
     width: 100%;
@@ -11,4 +12,12 @@ header .logo {
       display: block;
       height: 100%;
       padding-left: 20px;
+=======
+    background: white url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+>>>>>>> f532a22a4f8be652b62abde014484cf64cb92898
 }
